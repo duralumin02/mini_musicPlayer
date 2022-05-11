@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Music Player</title>
+    <link rel="icon" href="./music_cover/music-note.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <audio src="./music_album/songOne.mp3" class="audio"></audio>
+    <div class="music-container">
+      <div class="music-box">
+        <p class="artist-name">me</p>
+        <p class="song-name">song one</p>
+
+        <div class="circle">
+          <div
+            class="disk"
+            style="background-image: url('./music_cover/holdOn.jpg')"
+          >
+            <span class="disk-circle"></span>
+          </div>
+          <div class="text">
+            <p class="showCurrentTrack">Playing Music x of y</p>
+          </div>
+        </div>
+
+        <div class="soundController">
+          <i class="fa-solid fa-volume-high volume-high active"></i>
+          <i class="fa-solid fa-volume-xmark sound-off active"></i>
+          <i class="fa-solid fa-volume-low sound-on"></i>
+          <input
+            type="range"
+            class="volume"
+            min="0"
+            max="100"
+            oninput="checkVolume()"
+          />
+          <span class="volume-percentage">50</span>
+        </div>
+
+        <div class="progressBar">
+          <input type="range" class="seek-bar" value="0" />
+          <span class="current-time">00:00</span>
+          <span class="song-duration">00:00</span>
+        </div>
+
+        <div class="controls">
+          <i class="fas fa-repeat repeatNormal-btn active"></i>
+
+          <i class="fas fa-shuffle random-btn active"></i>
+
+          <i class="fa-solid fa-backward-step backward-btn"></i>
+
+          <button class="play-btn pause">
+            <span></span>
+            <span></span>
+          </button>
+          <i class="fa-solid fa-forward-step forward-btn"></i>
+          <i class="fa-solid fa-rotate-right restart-btn"></i>
+        </div>
+
+        <div class="beat-box stop">
+          <span class="node"></span>
+          <span class="node"></span>
+          <span class="node"></span>
+          <span class="node"></span>
+          <span class="node"></span>
+          <span class="node"></span>
+          <span class="node"></span>
+        </div>
+      </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="/script.js"></script>
+  </body>
+</html>
